@@ -36,10 +36,14 @@ export default {
 };
 </script>
 
-<style>
+
+<style lang="scss">
 .app-container {
   padding-top: 40px;
   padding-bottom: 50px;
   overflow-x: hidden;
+}
+body {
+  background-color: #fff;
 }
 </style>
