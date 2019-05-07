@@ -44,8 +44,8 @@ export default {
 };
 </script>
 
-<style>
-.app-container {
-  padding-top: 40px;
+<style lang="scss">
+body {
+  background-color: #fff;
 }
 </style>
