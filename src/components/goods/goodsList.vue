@@ -22,32 +22,32 @@
 <script>
 export default {
   created() {
-    this.getGoodsList();
+    this.getGoodsList()
   },
   data() {
     return {
       pageindex: 1,
       goodslist: []
-    };
+    }
   },
   methods: {
     async getGoodsList() {
       const res = await this.$http.get(
-        "/api/getgoods?pageindex=" + this.pageindex
-      );
-      console.log(res);
-      this.goodslist = this.goodslist.concat(res.data.message);
+        '/api/getgoods?pageindex=' + this.pageindex
+      )
+      console.log(res)
+      this.goodslist = this.goodslist.concat(res.data.message)
     },
     getMore() {
-      this.pageindex++;
-      this.getGoodsList();
+      this.pageindex++
+      this.getGoodsList()
     },
     goDetail(id) {
-      console.log(this);
-      this.$router.push({ name: "goodsinfo", params: { id } });
+      console.log(this)
+      this.$router.push(`/goodsinfo/${id}`)
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
