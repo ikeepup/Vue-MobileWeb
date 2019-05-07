@@ -133,5 +133,9 @@ export default {
             }
         }
 }
+.now_price{
+  color:red;
+  font-weight: 700;
+}
 
 </style>
