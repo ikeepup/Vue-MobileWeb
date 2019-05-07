@@ -8,8 +8,7 @@
       >
         <div class="mui-scroll">
           <a
-            :class="['mui-control-item',v.id == 0 ? 'mui-active' : '']"
-            href="#item2mobile"
+            :class="['mui-control-item',v.id == activeKey ? 'mui-active' : '']"
             data-wid="tab-top-subpage-2.html"
             v-for="v in photoListTabs"
             :key="v.id"
@@ -35,7 +34,8 @@
 <script>
 export default {
   created() {
-    this.getPhotoList(), this.getPhotoListId(0)
+    this.getPhotoList()
+    this.getPhotoListId(0)
   },
   methods: {
     // 获取头部列表
@@ -43,19 +43,20 @@ export default {
       const res = await this.$http.get('/api/getimgcategory')
       res.data.message.unshift({ title: '全部', id: 0 })
       this.photoListTabs = res.data.message
-      // console.log(res)
     },
     // 获取列表内容
     async getPhotoListId(id) {
       const res = await this.$http.get(`/api/getimages/${id}`)
       this.photoList = res.data.message
       // console.log(this.photoList)
+      this.activeKey = id
     }
   },
   data() {
     return {
       photoListTabs: [],
-      photoList: []
+      photoList: [],
+      activeKey: 0
     }
   }
 }
