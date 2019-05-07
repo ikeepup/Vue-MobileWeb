@@ -57,7 +57,7 @@
       </div>
       <div class="mui-card-footer">
         <mt-button type="primary" size="large" plain @click="goDesc(id)">图文介绍</mt-button>
-        <mt-button type="danger" size="large" plain >商品评论</mt-button>
+        <mt-button type="danger" size="large" plain @click="gopingjia(id)">商品评论</mt-button>
       </div>
     </div>
     </div>
@@ -67,8 +67,8 @@
 export default {
     data() {
         return {
-            id:87,
-            // id:this.$route.parmas.id,
+            // id:87,
+            id:this.$route.params.id,
             goodsinfo:{},
             // 轮播图
             lunbotu:[]
@@ -100,7 +100,10 @@ export default {
         
         },
         goDesc(id){
-            this.$router.push({ name: "goodsdesc", params: { id } });
+            this.$router.push(`/home/goodsdesc/${id}`);
+        },
+        gopingjia(id) {
+          this.$router.push(`/home/comment/${id}`)
         }
     }
 }
