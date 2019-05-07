@@ -1,8 +1,11 @@
 <template>
   <div class="app-container">
     <!-- 头部 -->
-    <mt-header fixed title="黑马程序员·Vue项目"></mt-header>
-
+    <mt-header fixed title="黑马程序员·Vue项目">
+      <span slot="left">
+        <mt-button v-if="$route.path!=='/home'" @click="back" icon="back">返回</mt-button>
+      </span>
+    </mt-header>
     <!-- 中间 -->
     <router-view/>
 
@@ -32,7 +35,12 @@
 
 <script>
 export default {
-  name: "App"
+  name: "App",
+  methods: {
+    back() {
+      this.$router.back();
+    }
+  }
 };
 </script>
 
