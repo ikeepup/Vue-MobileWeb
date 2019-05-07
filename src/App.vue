@@ -44,6 +44,7 @@ export default {
 };
 </script>
 
+
 <style lang="scss">
 .mint-header {
   z-index: 99;

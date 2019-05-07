@@ -44,7 +44,7 @@ export default {
     },
     goDetail(id) {
       console.log(this)
-      this.$router.push(`/goodsinfo/${id}`)
+      this.$router.push(`/home/goodsinfo/${id}`)
     }
   }
 }
