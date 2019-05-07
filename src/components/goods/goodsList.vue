@@ -43,7 +43,6 @@ export default {
       this.getGoodsList();
     },
     goDetail(id) {
-      console.log(this);
       this.$router.push(`/home/goodsinfo/${id}`);
     }
   }
