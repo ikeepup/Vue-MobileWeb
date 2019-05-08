@@ -11,6 +11,9 @@ import axios from 'axios'
 axios.defaults.baseURL = 'http://www.liulongbin.top:3005'
 Vue.prototype.$http = axios
 
+import controller from './components/share/controller.vue'
+Vue.component('controller', controller)
+
 import Comment from './components/share/comment.vue'
 Vue.component('comment', Comment)
 
@@ -19,25 +22,36 @@ Vue.component('comment', Comment)
 // 该文件无法处理->让webpack
 
 // 引入MUI相关的资源
-import "./lib/mui/css/mui.min.css";
+import './lib/mui/css/mui.min.css'
 
-import "./lib/mui/css/icons-extra.css";
+import './lib/mui/css/icons-extra.css'
 
 Vue.use(MintUI)
 Vue.filter('toTime', function(origin) {
   return new Date(origin).toLocaleString()
 })
 
-// 给axios做配置
-axios.defaults.baseURL = "http://www.liulongbin.top:3005";
-Vue.prototype.$http = axios;
+import Vuex from 'vuex'
+Vue.use(Vuex)
 
-Vue.config.productionTip = false;
+import goods from './components/share/store'
+const store = new Vuex.Store({
+  modules: {
+    goods
+  }
+})
+
+// 给axios做配置
+axios.defaults.baseURL = 'http://www.liulongbin.top:3005'
+Vue.prototype.$http = axios
+
+Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
-  el: "#app",
+  el: '#app',
   router,
+  store,
   components: { App },
-  template: "<App/>"
-});
+  template: '<App/>'
+})

@@ -35,8 +35,6 @@ export default {
 
 <style lang="scss" scoped>
 .mui-table-view {
-  margin-top: 40px;
-  margin-bottom: 50px;
   .mui-table-view-cell {
     a {
       img.mui-media-object {

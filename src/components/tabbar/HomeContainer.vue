@@ -21,25 +21,25 @@
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
         <a href="#/home/goodslist">
           <img class="mui-media-object" src="../../images/menu3.png">
-          <div class="mui-media-body">新闻资讯</div>
+          <div class="mui-media-body">商品购买</div>
         </a>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
         <a href="#/home/newslist">
           <img class="mui-media-object" src="../../images/menu4.png">
-          <div class="mui-media-body">新闻资讯</div>
+          <div class="mui-media-body">留言反馈</div>
         </a>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
         <a href="#/home/newslist">
           <img class="mui-media-object" src="../../images/menu5.png">
-          <div class="mui-media-body">新闻资讯</div>
+          <div class="mui-media-body">视频专区</div>
         </a>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
         <a href="#/home/newslist">
           <img class="mui-media-object" src="../../images/menu6.png">
-          <div class="mui-media-body">新闻资讯</div>
+          <div class="mui-media-body">联系我们</div>
         </a>
       </li>
     </ul>
@@ -64,7 +64,6 @@ export default {
 
 <style lang="scss">
 .home-container {
-  margin-top: 40px;
   .mint-swipe {
     height: 200px;
     .mint-swipe-item {

@@ -30,8 +30,6 @@ export default {
 <style lang="scss" scoped>
 .newsinfo-container {
   overflow: hidden;
-  margin-top: 40px;
-  margin-bottom: 50px;
   padding: 0 4px;
 
   .title {
