@@ -21,7 +21,6 @@
 export default {
   created() {
     this.$http.get('/api/getnewslist').then(res => {
-      console.log(res)
       this.newsList = res.data.message
     })
   },

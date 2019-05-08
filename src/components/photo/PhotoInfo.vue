@@ -24,12 +24,10 @@ export default {
     async getPhotoInfo() {
       const res = await this.$http.get(`/api/getimageInfo/${this.id}`)
       this.photoInfo = res.data.message[0]
-      // console.log(res)
     },
     async getPhotoPic() {
       const res = await this.$http.get(`/api/getthumimages/${this.id}`)
       this.photoPic = res.data.message
-      // console.log(res)
     }
   },
   data() {

@@ -1,22 +1,29 @@
 <template>
   <div>
     <!-- 商品列表项 -->
-    <div v-if="shopCarList.length">
-      <div class="mui-card" v-for="(goods,i) in shopCarInfo" :key="goods.goodId">
+    <div v-if="shopCarInfo.length">
+      <div class="mui-card" v-for="(goods,i) in shopCarList" :key="getKey(goods.goodsId)">
         <div class="mui-card-content">
           <div class="mui-card-content-inner">
-            <mt-switch :value="shopCarList[i].selected" @change="toggleSelect(goods.id)"></mt-switch>
-            <img :src="goods.thumb_path" alt>
+            <mt-switch :value="goods.selected" @change="toggleSelect(goods.goodsId)"></mt-switch>
+            <img
+              :src="(shopCarInfo.find(each =>  { 
+                return goods.goodsId===each.id})).thumb_path"
+              alt
+            >
             <div class="info">
-              <h1>{{goods.title}}</h1>
+              <h1>
+                {{(shopCarInfo.find(each => {
+                return goods.goodsId===each.id})).title}}
+              </h1>
               <div>
-                <span class="red">¥{{goods.sell_price}}</span>
+                <span class="red">¥{{goods.goodsPrice}}</span>
                 <div class="mui-numbox">
                   <button class="mui-btn mui-numbox-btn-minus" type="button" @click="minQuan(i)">-</button>
-                  <input class="mui-numbox-input" type="number" :value="shopCarList[i].quantity">
+                  <input class="mui-numbox-input" type="number" :value="goods.quantity">
                   <button class="mui-btn mui-numbox-btn-plus" type="button" @click="addQuan(i)">+</button>
                 </div>
-                <a href="#" @click="removeGoods(goods.id)">删除</a>
+                <a href="#" @click="removeGoods(goods.goodsId)">删除</a>
               </div>
             </div>
           </div>
@@ -49,7 +56,6 @@ export default {
   created() {
     if (this.ids) {
       this.$http.get(`/api/goods/getshopcarlist/${this.ids}`).then(res => {
-        console.log(res)
         this.shopCarInfo = res.data.message
       })
     }
@@ -69,6 +75,9 @@ export default {
       let index = this.shopCarInfo.findIndex(item => item.id === id)
       this.shopCarInfo.splice(index, 1)
       this.$store.commit('goods/removeGoods', id)
+    },
+    getKey(id) {
+      return this.shopCarInfo.findIndex(item => item.id === id)
     }
   }
 }

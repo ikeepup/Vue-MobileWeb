@@ -86,7 +86,6 @@ export default {
     },
     removeGoods(state, id) {
       let index = state.shopCarList.findIndex(item => item.goodsId === id)
-      console.log(index)
       state.shopCarList.splice(index, 1)
     }
   }

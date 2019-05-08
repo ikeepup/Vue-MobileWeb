@@ -35,7 +35,6 @@ export default {
       const res = await this.$http.get(
         '/api/getgoods?pageindex=' + this.pageindex
       )
-      console.log(res)
       this.goodslist = this.goodslist.concat(res.data.message)
     },
     getMore() {

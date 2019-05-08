@@ -48,7 +48,6 @@ export default {
     async getPhotoListId(id) {
       const res = await this.$http.get(`/api/getimages/${id}`)
       this.photoList = res.data.message
-      // console.log(this.photoList)
       this.activeKey = id
     }
   },
