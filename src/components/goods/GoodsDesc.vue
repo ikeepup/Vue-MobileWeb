@@ -1,32 +1,31 @@
 <template>
-    <div class="goodsdesc-container">
-        <h3>{{info.title}}</h3>
-        <hr/>
-        <div class="content" v-html="info.content"></div>
-    </div>
+  <div class="goodsdesc-container">
+    <h3>{{info.title}}</h3>
+    <hr>
+    <div class="content" v-html="info.content"></div>
+  </div>
 </template>
 
 <script>
 export default {
-    data() {
-        return{
-        info:{}
-        }
-    },
-    created(){
-        this.getgoodsdesc()
-    },
-    methods:{
-       async getgoodsdesc(){
-           const {data:dt} =await this.$http.get('/api/goods/getdesc/' + this.$route.params.id)
-        //    console.log(dt)
-           if(dt.status === 0){
-               this.info = dt.message[0]
-           }
-        //    console.log(this.info)
-        }
+  data() {
+    return {
+      info: {}
     }
-
+  },
+  created() {
+    this.getgoodsdesc()
+  },
+  methods: {
+    async getgoodsdesc() {
+      const { data: dt } = await this.$http.get(
+        '/api/goods/getdesc/' + this.$route.params.id
+      )
+      if (dt.status === 0) {
+        this.info = dt.message[0]
+      }
+    }
+  }
 }
 </script>
 
@@ -39,12 +38,10 @@ export default {
     text-align: center;
     margin: 15px 0;
   }
-  .content{
-      .gomeImgLoad{
+  .content {
+    .gomeImgLoad {
       width: 100%;
-      }
-
+    }
   }
 }
-
 </style>
