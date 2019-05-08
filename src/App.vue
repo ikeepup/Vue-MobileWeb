@@ -60,4 +60,7 @@ export default {
 body {
   background-color: #fff;
 }
+.app-container {
+  padding-bottom: 40px;
+}
 </style>
