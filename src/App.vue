@@ -35,13 +35,13 @@
 
 <script>
 export default {
-  name: "App",
+  name: 'App',
   methods: {
     back() {
-      this.$router.back();
+      this.$router.back()
     }
   }
-};
+}
 </script>
 
 
@@ -55,5 +55,8 @@ export default {
 }
 body {
   background-color: #fff;
+}
+.app-container {
+  padding-bottom: 40px;
 }
 </style>

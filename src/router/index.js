@@ -8,6 +8,7 @@ import MemberContainer from '../components/tabbar/MemberContainer.vue'
 import ShopcarContainer from '../components/tabbar/ShopcarContainer.vue'
 import SearchContainer from '../components/tabbar/SearchContainer.vue'
 import Photolist from '../components/photo/Photolist.vue'
+import Photoinfo from '../components/photo/Photoinfo.vue'
 import NewsList from '../components/news/newsList.vue'
 import NewsInfo from '../components/news/newsInfo.vue'
 import GoodsList from '../components/goods/goodsList.vue'
@@ -29,6 +30,7 @@ export default new Router({
     { path: '/home/newslist', component: NewsList },
     { path: '/home/newsinfo/:id', component: NewsInfo, props: true },
     { path: '/home/photolist', component: Photolist },
-    { path: '/home/comment/:id', component: Comment, props: true }
+    { path: '/home/photoinfo/:id', component: Photoinfo, porp: true },
+    { path: '/home/comment/:id', component: Comment, porp: true }
   ]
 })
